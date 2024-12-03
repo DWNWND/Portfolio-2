@@ -1,4 +1,82 @@
-:root {
+@import url("https://fonts.googleapis.com/css2?family=Bokor&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Domine:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Meow+Script&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overscroll-behavior: none;
+}
+
+.font-meow-script-regular {
+  font-family: "Meow Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-domine {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+}
+
+.font-quicksand {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+}
+
+.font-bokor-regular {
+  font-family: "Bokor", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-nunito-sans {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.font-crimson-text {
+  font-family: "Crimson Text", serif;
+  font-style: normal;
+}
+
+.font-libre-baskerville {
+  font-family: "Libre Baskerville", serif;
+  font-style: normal;
+}
+
+.font-eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-merriweather-light {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+}
+
+.backgroundImage {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.21), rgba(255, 255, 255, 0.216)), url("./assets/images/6488977.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +143,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
