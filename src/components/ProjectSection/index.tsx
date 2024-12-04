@@ -23,7 +23,7 @@ interface Project {
 export default function ProjectSection({ project }: { project: Project }): JSX.Element {
   const imageClasses = "overflow-hidden relative m-auto";
   return (
-    <section className="">
+    <div className="">
       <div className="border-y p-6 flex flex-col items-center justify-center gap-5 bg-black text-realWhite">
         <h3 className="font-libre-baskerville text-2xl uppercase text-center ">{project.title}</h3>
         <div className="">
@@ -41,6 +41,6 @@ export default function ProjectSection({ project }: { project: Project }): JSX.E
         <div className="bg-white bg-opacity-50 absolute top-0 z-[50] h-full w-full hover:bg-opacity-0 transition-all duration-300 ease-in-out"></div>
         <img src={project.image} alt={project.title} className="w-full object-cover" />
       </div>
-    </section>
+    </div>
   );
 }

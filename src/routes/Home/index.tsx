@@ -22,44 +22,46 @@ export default function Home() {
         <meta name="description" content="Hi, I’m Thea, a passionate front-end developer creating sleek, functional websites that stand out. Explore my portfolio to see how design and code come together seamlessly." /> //FILL INN
       </Helmet>
       <div className="bg-realWhite relative">
-        <Header />
-        <section className="px-4 py-60 xl:max-w-screen-xl m-auto">
-          <h1 className="font-libre-baskerville text-6xl leading-relaxed text-center">
-            I turn <em>complex functionality</em> into{" "}
-            <b>
-              user-friendly <span className="text-cta-ctaPrimary2">web applications</span>
-            </b>{" "}
-            and impactful <em>digital experiences.</em>
-          </h1>
-        </section>
-        <section className=" m-auto">
-          <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
-          <div className="flex w-full border-b">
-            <button onClick={() => setFilter("academic")} className={`${buttonClass} ${filter === "academic" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
-              academic projects
-            </button>
-            <div className="w-[4px] bg-black"></div>
-            <button onClick={() => setFilter("professional")} className={`${buttonClass} ${filter === "professional" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
-              professional projects
-            </button>
-            <div className="w-[4px] bg-black"></div>
-            <button onClick={() => setFilter("personal")} className={`${buttonClass} ${filter === "personal" ? "bg-opacity-100 text-realWhite" : "bg-opacity-0 hover:bg-opacity-20"}`}>
-              personal projects
-            </button>
-          </div>
-          <div className={`grid p-16 grid-cols-1 md:grid-cols-3 gap-8 bg-lazz`}>
-            {filter === "academic" && academicProjectsArr.slice(0, 6).map((project) => <ProjectCard project={project} key={project.id} />)}
-            {filter === "professional" && professionalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
-            {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
+        <section id="home">
+          <Header />
+          <div className="px-4 py-60 xl:max-w-screen-xl m-auto">
+            <h1 className="font-libre-baskerville text-6xl leading-relaxed text-center">
+              I turn <em>complex functionality</em> into
+              <b>
+                user-friendly <span className="text-cta-ctaPrimary2">web applications</span>
+              </b>
+              and impactful <em>digital experiences.</em>
+            </h1>
           </div>
         </section>
-        <div className="flex flex-col">
-          {projectsArr.map((project) => (
-            <ProjectSection project={project} key={project.id} />
-          ))}
-        </div>
-        <h1>Home</h1>
-        <p>Welcome to the home page!</p>
+        <section id="projects" className="min-h-screen">
+          <div className="m-auto">
+            <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
+            <div className="flex w-full border-b">
+              <button onClick={() => setFilter("academic")} className={`${buttonClass} ${filter === "academic" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
+                academic projects
+              </button>
+              <div className="w-[4px] bg-black"></div>
+              <button onClick={() => setFilter("professional")} className={`${buttonClass} ${filter === "professional" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
+                professional projects
+              </button>
+              <div className="w-[4px] bg-black"></div>
+              <button onClick={() => setFilter("personal")} className={`${buttonClass} ${filter === "personal" ? "bg-opacity-100 text-realWhite" : "bg-opacity-0 hover:bg-opacity-20"}`}>
+                personal projects
+              </button>
+            </div>
+            <div className={`grid p-16 grid-cols-1 md:grid-cols-3 gap-8 bg-lazz`}>
+              {filter === "academic" && academicProjectsArr.slice(0, 6).map((project) => <ProjectCard project={project} key={project.id} />)}
+              {filter === "professional" && professionalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
+              {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
+            </div>
+          </div>
+          <div className="flex flex-col">
+            {projectsArr.map((project) => (
+              <ProjectSection project={project} key={project.id} />
+            ))}
+          </div>
+        </section>
       </div>
     </HelmetProvider>
   );
