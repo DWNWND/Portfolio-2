@@ -38,17 +38,18 @@ export default function Nav() {
 
   const location = useLocation();
   const path = location.pathname;
-  const linkStyle = "hover:scale-105 text-black transform font-libre-baskerville transition duration-300 ease-in-out text-xl";
+  const linkStyle = "hover:scale-105 text-black transform font-nunito-sans transition duration-300 ease-in-out text-lg";
 
   return (
-    <nav className={`transition-all bg-realWhite z-[100] w-full ${isVisible ? "translate-y-0" : "-translate-y-full"} transition-max-height hover:shadow-md bg-opacity-50 hover:bg-opacity-100 duration-300 ease-in-out fixed top-0  p-4 border-b border-black `}>
-      <ul className="flex justify-around ">
+    <nav className={`transition-all bg-realWhite z-[100] w-full ${isVisible ? "translate-y-0" : "-translate-y-full"} transition-max-height hover:shadow-md duration-300 ease-in-out fixed top-0  p-4 border-b border-black `}>
+      <ul className="flex justify-around items-center">
         <li className={`${linkStyle} ${path === "/" && "font-bold"}`}>
           <Link to="/">home</Link>
         </li>
         <li className={`${linkStyle} ${path.includes("services") && "font-bold"}`}>
           <Link to="/services">services</Link>
         </li>
+        <h1 className="font-meow-script-regular xl:text-6xl">I'm Thea</h1>
         <li className={`${linkStyle} ${path.includes("projects") && "font-bold"}`}>
           <Link to="/projects">projects</Link>
         </li>
