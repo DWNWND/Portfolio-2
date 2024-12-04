@@ -24,9 +24,11 @@ export default function ProjectSection({ project }: { project: Project }): JSX.E
   const imageClasses = "overflow-hidden relative m-auto";
   return (
     <div className="">
-      <div className="border-y p-6 flex flex-col items-center justify-center gap-5 bg-black text-realWhite">
+      <div className=" p-6 flex flex-col items-center justify-center gap-5 bg-black text-realWhite">
         <h3 className="font-libre-baskerville text-2xl uppercase text-center ">{project.title}</h3>
-        <div className="">
+     
+      </div>
+      <div className="border flex justify-center p-2 bg-lazz">
           <Link to={project.url} className="relative flex items-center gap-2 justify-end font-nunito-sans text-blue-500 text-center group">
             <div className="relative">
               <span className="">live demo</span>
@@ -36,7 +38,6 @@ export default function ProjectSection({ project }: { project: Project }): JSX.E
             <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
           </Link>
         </div>
-      </div>
       <div className={imageClasses}>
         <div className="bg-white bg-opacity-50 absolute top-0 z-[50] h-full w-full hover:bg-opacity-0 transition-all duration-300 ease-in-out"></div>
         <img src={project.image} alt={project.title} className="w-full object-cover" />
