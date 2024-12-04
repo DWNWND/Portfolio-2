@@ -13,6 +13,7 @@ export default {
       bazaar: "#FFEAE6",
       cta: {
         ctaPrimary: "#5163EF",
+        ctaPrimary2: "#3E35BC",
         ctaSecondary: "#E0AB7F",
       },
       contrast: {
