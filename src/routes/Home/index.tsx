@@ -1,8 +1,9 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../components/Header";
 import { projectsArr } from "../../assets/projects/projectArr";
+import profileImage from "../../assets/images/IMG_6589.jpg";
 import ProjectCard from "../../components/ProjectCard";
-import ProjectSection from "../../components/ProjectSection";
+import ServicesAccordion from "../../components/ServicesAccordion";
 import { useState } from "react";
 
 export default function Home() {
@@ -12,7 +13,6 @@ export default function Home() {
   const professionalProjectsArr = projectsArr.filter((project) => project.assosiation === "professional");
   const academicProjectsArr = projectsArr.filter((project) => project.assosiation === "academic");
 
-  // const buttonClass = "w-full hover:scale-105 hover:bg-cta-ctaPrimary bg-cta-ctaPrimary hover:bg-opacity-70 font-nunito-sans text-xl border rounded-full px-10 py-4 transition ease-in-out duration-300 hover:shadow-md";
   const buttonClass = "w-full bg-black font-nunito-sans text-xl py-5 transition ease-in-out duration-300";
 
   return (
@@ -28,13 +28,14 @@ export default function Home() {
             <h1 className="font-libre-baskerville text-6xl leading-relaxed text-center">
               I turn <em>complex functionality</em> into
               <b>
+                {" "}
                 user-friendly <span className="text-cta-ctaPrimary2">web applications</span>
-              </b>
+              </b>{" "}
               and impactful <em>digital experiences.</em>
             </h1>
           </div>
         </section>
-        <section id="projects" className="min-h-screen">
+        <section id="projects" className="min-h-screen border-y">
           <div className="m-auto">
             <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
             <div className="flex w-full border-b">
@@ -56,11 +57,38 @@ export default function Home() {
               {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
             </div>
           </div>
-          <div className="flex flex-col">
-            {projectsArr.map((project) => (
-              <ProjectSection project={project} key={project.id} />
-            ))}
+        </section>
+        <section id="services" className="min-h-[36rem]">
+          <div className="m-auto">
+            {/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-bazaar bg-opacity-50">my services</h2> */}
+            <div className="px-4 py-16 xl:max-w-screen-xl m-auto">
+              <h3 className="font-libre-baskerville text-4xl leading-relaxed text-center">Let’s build something amazing together!</h3>
+            </div>
+            <div className="px-4 xl:max-w-screen-xl m-auto w-[64rem] max-w-[64rem]">
+              <h2 className="font-nunito-sans text-xl uppercase font-bold mb-3">my services:</h2>
+            </div>
+            <ServicesAccordion />
           </div>
+        </section>
+        <section id="about" className="bg-lazz min-h-[40rem] border-y">
+          {/* <h2 className="w-full font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">about me</h2> */}
+          <div className="flex flex-col md:flex-row justify-between items-center p-16 gap-16">
+            <div className="">
+              <img className="object-cover rounded-full h-[30rem] min-w-[30rem] border" src={profileImage} alt="I’m Thea—a passionate front-end developer and web designer dedicated to crafting user-friendly websites and impactful digital experiences."></img>
+            </div>
+            <div>
+              <h2 className="font-meow-script-regular xl:text-8xl mb-4">I’m Thea</h2>
+              <p className="font-nunito-sans text-xl leading-relaxed">
+                <p className="mb-3">I’ve always loved the challenge of turning ideas into something tangible.</p>
+                <p className="mb-3"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, and I find joy in solving puzzles and making things look just right.</p>
+                <p> When I’m not coding or tweaking layouts, you’ll probably find me sketching new ideas, experimenting with design tools, or sipping coffee while daydreaming about the next project.</p>
+                <p className="font-libre-baskerville text-2xl mt-6"> Let’s create something great together!</p>
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="contact" className="min-h-screen ">
+          <div className="m-auto">{/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-holidaze bg-opacity-50">contact me</h2> */}</div>
         </section>
       </div>
     </HelmetProvider>
