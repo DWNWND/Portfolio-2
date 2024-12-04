@@ -37,7 +37,7 @@ export default function Home() {
         </section>
         <section id="projects" className="min-h-screen border-y">
           <div className="m-auto">
-            <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
+            <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
             <div className="flex w-full border-b">
               <button onClick={() => setFilter("academic")} className={`${buttonClass} ${filter === "academic" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
                 academic projects
