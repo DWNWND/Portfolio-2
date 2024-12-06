@@ -5,9 +5,24 @@ import profileImage from "../../assets/images/IMG_6589.jpg";
 import ProjectCard from "../../components/ProjectCard";
 import ServicesAccordion from "../../components/ServicesAccordion";
 import { useState } from "react";
+import { ImageModal } from "../../components/ImageModal";
+import ContactForm from "../../components/ContactForm";
 
 export default function Home() {
   const [filter, setFilter] = useState<string>("academic");
+  const [imageModalOpen, setImageModalOpen] = useState<boolean>(false);
+  const [currentImage, setCurrentImage] = useState<string>("");
+  const [currentAlt, setCurrentAlt] = useState<string>("");
+
+  const openImageModal = () => {
+    setImageModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setImageModalOpen(false);
+    setCurrentImage("");
+    setCurrentAlt("");
+  };
 
   const personalProjectsArr = projectsArr.filter((project) => project.assosiation === "personal");
   const professionalProjectsArr = projectsArr.filter((project) => project.assosiation === "professional");
@@ -22,6 +37,7 @@ export default function Home() {
         <meta name="description" content="Hi, I’m Thea, a passionate front-end developer creating sleek, functional websites that stand out. Explore my portfolio to see how design and code come together seamlessly." /> //FILL INN
       </Helmet>
       <div className="bg-realWhite relative">
+        {imageModalOpen && <ImageModal image={currentImage} alt={currentAlt} toggle={closeModal} />}
         <section id="home">
           <Header />
           <div className="px-4 py-60 xl:max-w-screen-xl m-auto">
@@ -35,7 +51,7 @@ export default function Home() {
             </h1>
           </div>
         </section>
-        <section id="projects" className="min-h-screen border-y">
+        <section id="projects" className=" min-h-[36rem] border-y">
           <div className="m-auto">
             <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
             <div className="flex w-full border-b">
@@ -52,9 +68,9 @@ export default function Home() {
               </button>
             </div>
             <div className={`grid p-16 grid-cols-1 md:grid-cols-3 gap-8 bg-lazz`}>
-              {filter === "academic" && academicProjectsArr.slice(0, 6).map((project) => <ProjectCard project={project} key={project.id} />)}
-              {filter === "professional" && professionalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
-              {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} />)}
+              {filter === "academic" && academicProjectsArr.slice(0, 6).map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
+              {filter === "professional" && professionalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
+              {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
             </div>
           </div>
         </section>
@@ -64,9 +80,7 @@ export default function Home() {
             <div className="px-4 py-16 xl:max-w-screen-xl m-auto">
               <h3 className="font-libre-baskerville text-4xl leading-relaxed text-center">Let’s build something amazing together!</h3>
             </div>
-            <div className="px-4 xl:max-w-screen-xl m-auto w-[64rem] max-w-[64rem]">
-              <h2 className="font-nunito-sans text-xl uppercase font-bold mb-3">my services:</h2>
-            </div>
+
             <ServicesAccordion />
           </div>
         </section>
@@ -78,18 +92,25 @@ export default function Home() {
             </div>
             <div>
               <h2 className="font-meow-script-regular xl:text-8xl mb-4">I’m Thea</h2>
-              <p className="font-nunito-sans text-xl leading-relaxed">
+              <div className="font-nunito-sans text-xl leading-relaxed">
                 <p className="mb-3">I’ve always loved the challenge of turning ideas into something tangible.</p>
                 <p className="mb-3"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, and I find joy in solving puzzles and making things look just right.</p>
                 <p> When I’m not coding or tweaking layouts, you’ll probably find me sketching new ideas, experimenting with design tools, or sipping coffee while daydreaming about the next project.</p>
                 <p className="font-libre-baskerville text-2xl mt-6"> Let’s create something great together!</p>
-              </p>
+              </div>
             </div>
           </div>
         </section>
         <section id="contact" className="min-h-screen ">
-          <div className="m-auto">{/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-holidaze bg-opacity-50">contact me</h2> */}</div>
+          <div className="m-auto max-w-[60rem] my-20">
+            <h2 className="font-libre-baskerville text-5xl text-center">Lets get in touch and we can discuss how I can make your life easier!</h2>
+          </div>
+          <div className="m-auto max-w-[60rem]">
+            <ContactForm />
+            {/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-holidaze bg-opacity-50">contact me</h2> */}
+          </div>
         </section>
+  
       </div>
     </HelmetProvider>
   );
