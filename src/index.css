@@ -10,6 +10,29 @@ html {
 body {
   overscroll-behavior: none;
 }
+.label {
+  font-size: 1rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+}
+
+.input {
+  padding: 0.5rem 0.7rem;
+  /* margin: 0.5rem; */
+  font-size: 1rem;
+  border: 1px solid black;
+  font-weight: 400;
+  border-radius: 0.5em;
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+.input::placeholder {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: italic;
+}
 
 .font-meow-script-regular {
   font-family: "Meow Script", cursive;
