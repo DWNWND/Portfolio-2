@@ -39,12 +39,19 @@ function Gradings({ grade }: { grade: number }): JSX.Element {
   return <div className="flex gap-2">{stars}</div>;
 }
 
-export default function ProjectCard({ project }: { project: Project }): JSX.Element {
+interface ProjectCardProps {
+  project: Project;
+  openImageModal: () => void;
+  setCurrentImage: (image: string) => void;
+  setCurrentAlt: (alt: string) => void;
+}
+
+export default function ProjectCard({ project, openImageModal, setCurrentImage, setCurrentAlt }: ProjectCardProps): JSX.Element {
   return (
     <div>
-      <div className="mb-6 flex">
+      <div className={`bg-realWhite  border rounded-lg flex flex-col relative hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105`}>
         {project.assosiation === "academic" ? (
-          <>
+          <div className={`flex justify-center p-6`}>
             {project.grading && project.grading > 0 ? (
               <div className="m-auto flex items-center gap-2">
                 <Gradings grade={project.grading} />
@@ -53,14 +60,11 @@ export default function ProjectCard({ project }: { project: Project }): JSX.Elem
             ) : (
               <p className="m-auto">not graded yet</p>
             )}
-          </>
+          </div>
         ) : null}
-      </div>
-      <div className={`bg-realWhite  border rounded-lg flex flex-col relative hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105`}>
-        <div className={`flex justify-center p-6`}>
-          <img src={project.logo} alt={project.title} className="h-10 max-h-8" />
-        </div>
-        <div className="p-8 flex flex-col justify-between gap-4 border-t min-h-60 h-60">
+        {/* <img src={project.logo} alt={project.title} className="h-10 max-h-8" /> */}
+        {/* </div> */}
+        <div className={`${project.assosiation === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 h-60`}>
           <div className="flex gap-4 flex-col">
             <div className="flex justify-between">
               <h3 className="font-libre-baskerville text-2xl mb-2">{project.title}</h3>
@@ -69,13 +73,28 @@ export default function ProjectCard({ project }: { project: Project }): JSX.Elem
           </div>
         </div>
         <div className="border-t p-8 flex items-center justify-between">
-          <Link to={project.url} className="relative flex items-center gap-2 justify-end font-nunito-sans text-blue-500 text-center group">
-            <div className="relative">
-              <span className="">live demo</span>
-              <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </div>
-            <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
-          </Link>
+          <div className="flex flex-col gap-2 items-start">
+            <Link to={project.url} className="relative flex items-center gap-2 justify-end font-nunito-sans text-blue-500 text-center group">
+              <div className="relative">
+                <span className="">live demo</span>
+                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+              </div>
+              <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
+            </Link>
+            <button
+              onClick={() => {
+                openImageModal();
+                setCurrentImage(project.image);
+                setCurrentAlt(project.description);
+              }}
+              className="relative flex items-center gap-2 justify-end font-nunito-sans text-blue-500 text-center group">
+              <div className="relative">
+                <span className="">screenshot</span>
+                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+              </div>
+              <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
+            </button>
+          </div>
           <div className="flex justify-center gap-4 text-2xl">
             {project.tailwind && <RiTailwindCssFill />}
             {project.react && <RiReactjsLine />}
