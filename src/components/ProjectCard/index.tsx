@@ -49,7 +49,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, openImageModal, setCurrentImage, setCurrentAlt }: ProjectCardProps): JSX.Element {
   return (
     <div>
-      <div className={`bg-realWhite  border rounded-lg flex flex-col relative hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105`}>
+      <div className={`bg-realWhite  border rounded-lg flex flex-col relative hover:shadow-lg transition duration-300 ease-in-out transform md:hover:scale-105`}>
         {project.assosiation === "academic" ? (
           <div className={`flex justify-center p-6`}>
             {project.grading && project.grading > 0 ? (
@@ -64,7 +64,7 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
         ) : null}
         {/* <img src={project.logo} alt={project.title} className="h-10 max-h-8" /> */}
         {/* </div> */}
-        <div className={`${project.assosiation === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 h-60`}>
+        <div className={`${project.assosiation === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 md:h-60`}>
           <div className="flex gap-4 flex-col">
             <div className="flex justify-between">
               <h3 className="font-libre-baskerville text-2xl mb-2">{project.title}</h3>

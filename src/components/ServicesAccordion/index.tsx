@@ -33,9 +33,9 @@ export default function ServicesAccordion(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className="px-4 md:px-0">
       <div className="flex flex-col gap-4 max-w-[64rem] m-auto mb-16">
-        <div className="px-4 xl:max-w-screen-xl m-auto w-[64rem] max-w-[64rem]">
+        <div className="px-4 xl:max-w-screen-xl m-auto md:w-[64rem] max-w-[64rem]">
           <h2 className="font-nunito-sans text-xl uppercase font-bold mb-3">my services:</h2>
         </div>
         {servicesArr.map((service) => {
@@ -43,7 +43,7 @@ export default function ServicesAccordion(): JSX.Element {
         })}
       </div>
       <div className="flex flex-col gap-4 max-w-[64rem] m-auto mb-16">
-        <div className="px-4 xl:max-w-screen-xl m-auto w-[64rem] max-w-[64rem]">
+        <div className="px-4 xl:max-w-screen-xl m-auto md:w-[64rem] max-w-[64rem]">
           <h2 className="font-nunito-sans text-xl uppercase font-bold mb-3">packages:</h2>
         </div>
         {packagesArr.map((packages) => {

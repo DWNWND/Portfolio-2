@@ -41,7 +41,7 @@ export default function Home() {
         <section id="home">
           <Header />
           <div className="px-4 py-60 xl:max-w-screen-xl m-auto">
-            <h1 className="font-libre-baskerville text-6xl leading-relaxed text-center">
+            <h1 className="font-libre-baskerville text-2xl md:text-6xl leading-relaxed text-center">
               I turn <em>complex functionality</em> into
               <b>
                 {" "}
@@ -67,7 +67,7 @@ export default function Home() {
                 personal projects
               </button>
             </div>
-            <div className={`grid p-16 grid-cols-1 md:grid-cols-3 gap-8 bg-lazz`}>
+            <div className={`grid p-4 md:p-16 grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 bg-lazz`}>
               {filter === "academic" && academicProjectsArr.slice(0, 6).map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
               {filter === "professional" && professionalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
               {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
@@ -86,12 +86,12 @@ export default function Home() {
         </section>
         <section id="about" className="bg-lazz min-h-[40rem] border-y">
           {/* <h2 className="w-full font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">about me</h2> */}
-          <div className="flex flex-col md:flex-row justify-between items-center p-16 gap-16">
+          <div className="flex flex-col md:flex-row justify-between items-center p-6 md:p-16 gap-16">
             <div className="">
-              <img className="object-cover rounded-full h-[30rem] min-w-[30rem] border" src={profileImage} alt="I’m Thea—a passionate front-end developer and web designer dedicated to crafting user-friendly websites and impactful digital experiences."></img>
+              <img className="object-cover rounded-full h-[16rem] min-w-[16rem] md:h-[30rem] md:min-w-[30rem] border" src={profileImage} alt="I’m Thea—a passionate front-end developer and web designer dedicated to crafting user-friendly websites and impactful digital experiences."></img>
             </div>
             <div>
-              <h2 className="font-meow-script-regular xl:text-8xl mb-4">I’m Thea</h2>
+              <h2 className="font-meow-script-regular text-6xl xl:text-8xl mb-4">I’m Thea</h2>
               <div className="font-nunito-sans text-xl leading-relaxed">
                 <p className="mb-3">I’ve always loved the challenge of turning ideas into something tangible.</p>
                 <p className="mb-3"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, and I find joy in solving puzzles and making things look just right.</p>
@@ -101,11 +101,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="contact" className="min-h-screen ">
+        <section id="contact" className="min-h-screen p-4">
           <div className="m-auto max-w-[60rem] my-20">
-            <h2 className="font-libre-baskerville text-5xl text-center">Lets get in touch and we can discuss how I can make your life easier!</h2>
+            <h2 className="font-libre-baskerville text-3xl md:text-5xl text-center">Lets get in touch and we can discuss how I can make your life easier!</h2>
           </div>
-          <div className="m-auto max-w-[60rem]">
+          <div className="m-auto max-w-[60rem] ">
             <ContactForm />
             {/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-holidaze bg-opacity-50">contact me</h2> */}
           </div>
