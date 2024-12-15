@@ -62,8 +62,6 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
             )}
           </div>
         ) : null}
-        {/* <img src={project.logo} alt={project.title} className="h-10 max-h-8" /> */}
-        {/* </div> */}
         <div className={`${project.assosiation === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 md:h-60`}>
           <div className="flex gap-4 flex-col">
             <div className="flex justify-between">

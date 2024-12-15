@@ -3,10 +3,8 @@ import Header from "../../components/Header";
 import { projectsArr } from "../../assets/projects/projectArr";
 import profileImage from "../../assets/images/IMG_6589.jpg";
 import ProjectCard from "../../components/ProjectCard";
-import ServicesAccordion from "../../components/ServicesAccordion";
 import { useState } from "react";
 import { ImageModal } from "../../components/ImageModal";
-import ContactForm from "../../components/ContactForm";
 
 export default function Home() {
   const [filter, setFilter] = useState<string>("academic");
@@ -74,18 +72,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="services" className="min-h-[36rem]">
-          <div className="m-auto">
-            {/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-bazaar bg-opacity-50">my services</h2> */}
-            <div className="px-4 py-16 xl:max-w-screen-xl m-auto">
-              <h3 className="font-libre-baskerville text-4xl leading-relaxed text-center">Let’s build something amazing together!</h3>
-            </div>
-
-            <ServicesAccordion />
-          </div>
-        </section>
-        <section id="about" className="bg-lazz min-h-[40rem] border-y">
-          {/* <h2 className="w-full font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-cta-ctaPrimary2 bg-opacity-50">about me</h2> */}
+        <section id="about" className="bg-realWhite min-h-[40rem]">
           <div className="flex flex-col md:flex-row justify-between items-center p-6 md:p-16 gap-16">
             <div className="">
               <img className="object-cover rounded-full h-[16rem] min-w-[16rem] md:h-[30rem] md:min-w-[30rem] border" src={profileImage} alt="I’m Thea—a passionate front-end developer and web designer dedicated to crafting user-friendly websites and impactful digital experiences."></img>
@@ -96,21 +83,10 @@ export default function Home() {
                 <p className="mb-3">I’ve always loved the challenge of turning ideas into something tangible.</p>
                 <p className="mb-3"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, and I find joy in solving puzzles and making things look just right.</p>
                 <p> When I’m not coding or tweaking layouts, you’ll probably find me sketching new ideas, experimenting with design tools, or sipping coffee while daydreaming about the next project.</p>
-                <p className="font-libre-baskerville text-2xl mt-6"> Let’s create something great together!</p>
               </div>
             </div>
           </div>
         </section>
-        <section id="contact" className="min-h-screen p-4">
-          <div className="m-auto max-w-[60rem] my-20">
-            <h2 className="font-libre-baskerville text-3xl md:text-5xl text-center">Lets get in touch and we can discuss how I can make your life easier!</h2>
-          </div>
-          <div className="m-auto max-w-[60rem] ">
-            <ContactForm />
-            {/* <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b border-t p-4 bg-holidaze bg-opacity-50">contact me</h2> */}
-          </div>
-        </section>
-  
       </div>
     </HelmetProvider>
   );
