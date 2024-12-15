@@ -3,14 +3,12 @@ import bazaarScreenshot from "../screenshots/application-screenshot-bazaar.png";
 import lazzScreenshot from "../screenshots/application-screenshot-lazz.png";
 import thecheckinScreenshot from "../screenshots/application-screenshot-thecheckin.png";
 import csmScreenshot from "../screenshots/application-screenshot-csm.png";
-import rainydaysScreenshot from "../screenshots/application-screenshot-rainydays.png";
 import microticScreenshot from "../screenshots/application-screenshot-microtic.png";
 import holidazeLogo from "../logos/holidaze-logo.svg";
 import bazaarLogo from "../logos/bazaar-logo.svg";
 import lazzLogo from "../logos/lazz-logo.svg";
 import thecheckinLogo from "../logos/thecheckin-logo.svg";
 import csmLogo from "../logos/csm-logo.svg";
-import rainydaysLogo from "../logos/rainydays-logo.svg";
 import microticLogo from "../logos/microtic-logo.svg";
 
 export const projectsArr = [
@@ -20,6 +18,7 @@ export const projectsArr = [
     description: "Booking website for hotels. Built with React, TypeScript, Tailwind CSS, Vite and Noroff API. Deployed with Netlify.",
     image: holidazeScreenshot,
     url: "https://holidaze-thea-final-exam.netlify.app/",
+    repo: "https://github.com/DWNWND/Final-Exam-Thea",
     logo: holidazeLogo,
     assosiation: "academic",
     grading: 0,
@@ -39,6 +38,7 @@ export const projectsArr = [
     description: "Live auction website. Built with Vanilla JS, SCSS, Bootstrap and Noroff API. Deployed with GitHub Pages. Including unit-tests with Jest and e2e-tests with Cypress running on workflows.",
     image: bazaarScreenshot,
     url: "https://dwnwnd.github.io/SemesterProject2_TheaOland/",
+    repo: "https://github.com/DWNWND/SemesterProject2_TheaOland",
     logo: bazaarLogo,
     assosiation: "academic",
     grading: 5,
@@ -58,6 +58,7 @@ export const projectsArr = [
     description: "E-commerce website. Built with React, CSS modules, Vite and Noroff API. Deployed with Netlify.",
     image: lazzScreenshot,
     url: "https://lazz.netlify.app/",
+    repo: "https://github.com/DWNWND/Frontend-Frameworks-CA-Thea",
     logo: lazzLogo,
     assosiation: "academic",
     grading: 5,
@@ -77,6 +78,7 @@ export const projectsArr = [
     description: "Social media website. Built with Vanilla JS, HTML, Bootstrap and Noroff API. Deployed with Netlify.",
     image: thecheckinScreenshot,
     url: "https://poetic-syrniki-8982a1.netlify.app/",
+    repo: "https://github.com/DWNWND/css-frameworks-ca-thea",
     logo: thecheckinLogo,
     assosiation: "academic",
     grading: 5,
@@ -96,6 +98,7 @@ export const projectsArr = [
     description: "Buisness landingpage. Built with HTML and CSS. Deployed with Netlify.",
     image: csmScreenshot,
     url: "https://dainty-pony-7fe7b6.netlify.app/",
+    repo: "https://github.com/DWNWND/SemesterProject1_Thea-Oland",
     logo: csmLogo,
     assosiation: "academic",
     grading: 5,
@@ -109,31 +112,14 @@ export const projectsArr = [
     css: true,
     html: true,
   },
+
   {
     id: 10,
-    title: "Rainy Days",
-    description: "E-commerce. Built with HTML and CSS. Deployed with Netlify.",
-    image: rainydaysScreenshot,
-    url: "https://cosmic-chebakia-e790e2.netlify.app/",
-    logo: rainydaysLogo,
-    assosiation: "academic",
-    grading: 5,
-    tailwind: false,
-    react: false,
-    js: false,
-    typescript: false,
-    bootstrap: false,
-    sass: false,
-    cssModules: false,
-    css: true,
-    html: true,
-  },
-  {
-    id: 11,
     title: "Microtic",
     description: "Blog. Built with HTML, CSS and personal CMS. Deployed with Netlify.",
     image: microticScreenshot,
     url: "https://spiffy-halva-4ffb7c.netlify.app/",
+    repo: "https://github.com/DWNWND/project-exam-1-DWNWND",
     logo: microticLogo,
     assosiation: "academic",
     grading: 5,
