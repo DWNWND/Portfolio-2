@@ -7,7 +7,6 @@ import { useState } from "react";
 import { ImageModal } from "../../components/ImageModal";
 
 export default function Home() {
-  const [filter, setFilter] = useState<string>("academic");
   const [imageModalOpen, setImageModalOpen] = useState<boolean>(false);
   const [currentImage, setCurrentImage] = useState<string>("");
   const [currentAlt, setCurrentAlt] = useState<string>("");
@@ -22,11 +21,7 @@ export default function Home() {
     setCurrentAlt("");
   };
 
-  const personalProjectsArr = projectsArr.filter((project) => project.assosiation === "personal");
-  const professionalProjectsArr = projectsArr.filter((project) => project.assosiation === "professional");
   const academicProjectsArr = projectsArr.filter((project) => project.assosiation === "academic");
-
-  const buttonClass = "w-full bg-black font-nunito-sans text-xl py-5 transition ease-in-out duration-300";
 
   return (
     <HelmetProvider>
@@ -51,24 +46,11 @@ export default function Home() {
         </section>
         <section id="projects" className=" min-h-[36rem] border-y">
           <div className="m-auto">
-            <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b p-4 bg-cta-ctaPrimary2 bg-opacity-50">my projects</h2>
-            <div className="flex w-full border-b">
-              <button onClick={() => setFilter("academic")} className={`${buttonClass} ${filter === "academic" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
-                academic projects
-              </button>
-              <div className="w-[4px] bg-black"></div>
-              <button onClick={() => setFilter("professional")} className={`${buttonClass} ${filter === "professional" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-opacity-20"}`}>
-                professional projects
-              </button>
-              <div className="w-[4px] bg-black"></div>
-              <button onClick={() => setFilter("personal")} className={`${buttonClass} ${filter === "personal" ? "bg-opacity-100 text-realWhite" : "bg-opacity-0 hover:bg-opacity-20"}`}>
-                personal projects
-              </button>
-            </div>
+            <h2 className="font-libre-baskerville text-4xl uppercase text-center border-b p-4 bg-cta-ctaPrimary2 bg-opacity-50">my academic projects</h2>
             <div className={`grid p-4 md:p-16 grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 bg-lazz`}>
-              {filter === "academic" && academicProjectsArr.slice(0, 6).map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
-              {filter === "professional" && professionalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
-              {filter === "personal" && personalProjectsArr.map((project) => <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />)}
+              {academicProjectsArr.map((project) => (
+                <ProjectCard project={project} key={project.id} openImageModal={openImageModal} setCurrentImage={setCurrentImage} setCurrentAlt={setCurrentAlt} />
+              ))}
             </div>
           </div>
         </section>
