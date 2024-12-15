@@ -51,18 +51,24 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
   return (
     <div>
       <div className={`bg-realWhite  border rounded-lg flex flex-col relative hover:shadow-lg transition duration-300 ease-in-out transform md:hover:scale-105`}>
-        {project.assosiation === "academic" ? (
-          <div className={`flex justify-center p-6`}>
-            {project.grading && project.grading > 0 ? (
-              <div className="m-auto flex items-center gap-2">
-                <Gradings grade={project.grading} />
-                <p>(A)</p>
-              </div>
-            ) : (
-              <p className="m-auto">not graded yet</p>
-            )}
-          </div>
-        ) : null}
+        <div className={`flex justify-center p-6`}>
+          {project.grading && project.grading > 0 && project.grading < 6 && (
+            <div className="m-auto flex items-center gap-2">
+              <Gradings grade={project.grading} />
+              <p>(A)</p>
+            </div>
+          )}
+          {project.grading && project.grading === 0 && (
+            <div className="m-auto flex items-center gap-2">
+              <p>not graded yet</p>
+            </div>
+          )}
+          {project.grading && project.grading === 6 && (
+            <div className="m-auto flex items-center gap-2">
+              <p>passed</p>
+            </div>
+          )}
+        </div>
         <div className={`${project.assosiation === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 md:h-60`}>
           <div className="flex gap-4 flex-col">
             <div className="flex justify-between">
