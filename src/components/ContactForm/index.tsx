@@ -49,7 +49,7 @@ export default function ContactForm() {
         <label htmlFor="subject" className="label">
           Subject
         </label>
-        <input type="text" id="subject" placeholder="Inquiry about buisness landing page" className="input" {...register("subject")} />
+        <input type="text" id="subject" placeholder="Inquiry about business landing page" className="input" {...register("subject")} />
         {errors.subject && <p className="error">{errors.subject.message}</p>}
       </div>
       <div className="flex flex-col gap-2">
@@ -61,7 +61,7 @@ export default function ContactForm() {
       </div>
 
       <div className="relative group self-center mb-6">
-        <button type="submit" className="hover:scale-105 bg-cta-ctaPrimary2 bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
+        <button type="submit" className="hover:scale-105 bg-cta-primary2 bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
           send inquiry
         </button>
         <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>

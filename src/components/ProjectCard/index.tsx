@@ -12,7 +12,7 @@ interface Project {
   url: string;
   logo: string;
   id: number;
-  assosiation: string;
+  association: string;
   grading?: number;
   tailwind: boolean;
   react: boolean;
@@ -23,9 +23,11 @@ interface Project {
   cssModules: boolean;
   html: boolean;
   css: boolean;
+  repo?: string;
+  finished: boolean;
 }
 
-function Gradings({ grade }: { grade: number }): JSX.Element {
+function Grading({ grade }: { grade: number }): JSX.Element {
   const stars = [];
 
   for (let i = 0; i < 5; i++) {
@@ -50,24 +52,31 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
   return (
     <div>
       <div className={`bg-realWhite  border rounded-lg flex flex-col relative hover:shadow-lg transition duration-300 ease-in-out transform md:hover:scale-105`}>
-        {project.assosiation === "academic" ? (
+        {project.association === "academic" && project.grading ? (
           <div className={`flex justify-center p-6`}>
-            {project.grading && project.grading > 0 ? (
+            {project.grading > 0 && project.grading < 6 && (
               <div className="m-auto flex items-center gap-2">
-                <Gradings grade={project.grading} />
+                <Grading grade={project.grading} />
                 <p>(A)</p>
               </div>
-            ) : (
-              <p className="m-auto">not graded yet</p>
+            )}
+            {project.grading === 10 && (
+              <div className="m-auto flex items-center gap-2">
+                <p>not graded yet</p>
+              </div>
+            )}
+            {project.grading === 6 && (
+              <div className="m-auto flex items-center gap-2">
+                <p>passed</p>
+              </div>
             )}
           </div>
         ) : null}
-        {/* <img src={project.logo} alt={project.title} className="h-10 max-h-8" /> */}
-        {/* </div> */}
-        <div className={`${project.assosiation === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 md:h-60`}>
+        <div className={`${project.association === "academic" && "border-t"} p-8 flex flex-col justify-between gap-4  min-h-60 md:h-60`}>
           <div className="flex gap-4 flex-col">
             <div className="flex justify-between">
               <h3 className="font-libre-baskerville text-2xl mb-2">{project.title}</h3>
+              {!project.finished && <p className="text-sm text-cta-secondary">work in progress</p>}
             </div>
             <p className="font-nunito-sans text-lg">{project.description}</p>
           </div>
@@ -81,6 +90,15 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
               </div>
               <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
             </Link>
+            {project.association === "academic" && project.repo && (
+              <Link to={project.repo} className="relative flex items-center gap-2 justify-end font-nunito-sans text-blue-500 text-center group">
+                <div className="relative">
+                  <span className="">github repo</span>
+                  <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+                </div>
+                <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
+              </Link>
+            )}
             <button
               onClick={() => {
                 openImageModal();
