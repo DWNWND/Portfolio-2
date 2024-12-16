@@ -12,13 +12,13 @@ export default {
       holidaze: "#C0D1B9",
       bazaar: "#FFEAE6",
       cta: {
-        ctaPrimary: "#5163EF",
-        ctaPrimary2: "#3E35BC",
-        ctaSecondary: "#E0AB7F",
+        primary: "#5163EF",
+        primary2: "#3E35BC",
+        secondary: "#E0AB7F",
       },
       contrast: {
-        contrastPrimary: "#83876A",
-        contrastSecondary: "#D5D3C4",
+        primary: "#83876A",
+        secondary: "#D5D3C4",
       },
     },
     extend: {},
