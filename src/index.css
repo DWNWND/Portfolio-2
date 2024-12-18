@@ -95,12 +95,20 @@ body {
   font-style: normal;
 }
 
+.backgroundOpt2 {
+  background: linear-gradient(transparent, #000000);
+}
+
 .backgroundImage {
   background-image: linear-gradient(rgba(255, 255, 255, 0.21), rgba(255, 255, 255, 0.216)), url("./assets/images/robert-zunikoff-ebno_NwaOns-unsplash.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
+}
+
+.backdropClass {
+  backdrop-filter: blur(10px);
 }
 
 @keyframes bounceArrow {
