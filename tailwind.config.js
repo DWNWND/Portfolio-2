@@ -9,11 +9,13 @@ export default {
       realWhite: "#FFFFFF",
       background: "#F0E4D4",
       lazz: "#E3E3EE",
+      lazz2: "#D5D5EE",
       holidaze: "#C0D1B9",
       bazaar: "#FFEAE6",
       cta: {
         primary: "#5163EF",
         primary2: "#3E35BC",
+        primary22: "#656FBE",
         secondary: "#E0AB7F",
       },
       contrast: {
