@@ -30,7 +30,11 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 w-full my-10 p-4 md:p-10 bg-bazaar border rounded-lg shadow-md">
+    <form onSubmit={handleSubmit(onSubmit)} className="backdropClass flex flex-col gap-8 w-full my-10 p-4 md:p-16 bg-realWhite bg-opacity-95 border rounded-lg shadow-md">
+      <div className="m-auto max-w-[60rem] my-6">
+        <h2 className="font-libre-baskerville text-3xl md:text-4xl text-center">Lets get in touch!</h2>
+        <p className="italic mt-8">Fill out this form, and i'll get in touch with you as soon as possible.</p>
+      </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="userName" className="label">
           Name
@@ -60,7 +64,7 @@ export default function ContactForm() {
         {errors.message && <p className="error">{errors.message.message}</p>}
       </div>
 
-      <div className="relative group self-center mb-6">
+      <div className="relative group self-center my-10">
         <button type="submit" className="hover:scale-105 bg-cta-primary2 bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
           send inquiry
         </button>

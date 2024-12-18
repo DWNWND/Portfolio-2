@@ -69,23 +69,36 @@ export default function Nav() {
               <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "home" ? "w-full" : "group-hover:w-full"}`}></span>
             </a>
           </li>
-          <li className={`${linkStyle} ${activeSection === "projects" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#projects" className="relative">
-              <span>projects</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "projects" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-          {!isMobile && <h1 className="font-meow-script-regular xl:text-6xl">I'm Thea</h1>}
+
           <li className={`${linkStyle} ${activeSection === "services" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
             <a href="#services" className="relative">
               <span>services</span>
               <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "services" ? "w-full" : "group-hover:w-full"}`}></span>
             </a>
           </li>
+          <li className={`${linkStyle} ${activeSection === "services" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+            <a href="#packages" className="relative">
+              <span>packages</span>
+              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "services" ? "w-full" : "group-hover:w-full"}`}></span>
+            </a>
+          </li>
+          {!isMobile && <h1 className="font-meow-script-regular xl:text-6xl">I'm Thea</h1>}
+          <li className={`${linkStyle} ${activeSection === "about" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+            <a href="#contact" className="relative">
+              <span>contact</span>
+              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "about" ? "w-full" : "group-hover:w-full"}`}></span>
+            </a>
+          </li>
           <li className={`${linkStyle} ${activeSection === "about" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
             <a href="#about" className="relative">
               <span>about</span>
               <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "about" ? "w-full" : "group-hover:w-full"}`}></span>
+            </a>
+          </li>
+          <li className={`${linkStyle} ${activeSection === "projects" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+            <a href="#projects" className="relative">
+              <span>projects</span>
+              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "projects" ? "w-full" : "group-hover:w-full"}`}></span>
             </a>
           </li>
         </ul>

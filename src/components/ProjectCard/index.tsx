@@ -78,8 +78,17 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
               <h3 className="font-libre-baskerville text-2xl mb-2">{project.title}</h3>
               {!project.finished && <p className="text-sm text-cta-secondary">work in progress</p>}
             </div>
-            <p className="font-nunito-sans text-lg">{project.description}</p>
+            <p className="font-nunito-sans">{project.description}</p>
           </div>
+        </div>
+        <div
+          className="border-t cursor-pointer"
+          onClick={() => {
+            openImageModal();
+            setCurrentImage(project.image);
+            setCurrentAlt(project.description);
+          }}>
+          <img src={project.image} alt={project.description}></img>
         </div>
         <div className="border-t p-8 flex items-center justify-between">
           <div className="flex flex-col gap-2 items-start">
@@ -99,7 +108,7 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
                 <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
               </Link>
             )}
-            <button
+            {/* <button
               onClick={() => {
                 openImageModal();
                 setCurrentImage(project.image);
@@ -111,7 +120,7 @@ export default function ProjectCard({ project, openImageModal, setCurrentImage, 
                 <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
               </div>
               <GoArrowRight className="transform group-hover:translate-x-2 group-hover:animate-bounceArrow transition-all duration-300" />
-            </button>
+            </button> */}
           </div>
           <div className="flex justify-center gap-4 text-2xl">
             {project.tailwind && <RiTailwindCssFill />}
