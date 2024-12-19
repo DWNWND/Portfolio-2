@@ -42,7 +42,6 @@ export default function Nav() {
         }
       }
       if (currentSection !== activeSection) {
-        console.log("Active section:", currentSection);
         setActiveSection(currentSection);
       }
     };

@@ -7,7 +7,11 @@
     <title>Vite + React + TS</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <form name="my-form" data-netlify="true" style="display: none">
+        <input type="hidden" name="form-name" value="my-form" />
+      </form>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
