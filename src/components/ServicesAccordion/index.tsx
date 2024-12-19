@@ -4,8 +4,7 @@ import { CgIfDesign } from "react-icons/cg";
 import { FaRegCopyright } from "react-icons/fa6";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { GoDotFill } from "react-icons/go";
-
-// import { packagesArr } from "../../assets/packages/packagesArr.tsx";
+import { BiGroup } from "react-icons/bi";
 
 interface Service {
   id: number;
@@ -22,11 +21,8 @@ interface ServicesAccordionProps {
 }
 
 export default function ServicesAccordion({ toggleAccordion, openAccordion }: ServicesAccordionProps): JSX.Element {
-  // const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-
-  // const toggleAccordion = (id: number) => {
-  //   setOpenAccordion(openAccordion === id ? null : id);
-  // };
+  const isOpen = openAccordion === 40;
+  const accordionBoxStyle = `${isOpen ? "bg-background" : "bg-white"} font-nunito-sans text-black py-6 px-8 rounded-lg h-full border shadow-md`;
 
   return (
     <div className="px-4 md:px-0">
@@ -37,6 +33,95 @@ export default function ServicesAccordion({ toggleAccordion, openAccordion }: Se
         {servicesArr.map((service) => {
           return <ServiceAccordionBox service={service} isOpen={openAccordion === service.id} toggle={() => toggleAccordion(service.id)} key={service.id} />;
         })}
+        <div className={accordionBoxStyle}>
+          <div className="flex items-center gap-2 justify-between cursor-pointer" onClick={() => toggleAccordion(40)}>
+            <div className="flex items-center gap-8 text-2xl">
+              <BiGroup />
+
+              <h2 className="text-2xl" id="40">
+                Front-End Development for Startups & Bigger Projects
+              </h2>
+            </div>
+            <div className="p-1 w-auto flex items-center justify-center cursor-pointer transition duration-300 ease-in-out">
+              <span className={`text-2xl ml-2 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}>
+                <IoIosArrowDown />
+              </span>
+            </div>
+          </div>
+          <div className={`px-[2.5rem]  flex flex-col gap-8 transition-max-height duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[1500px] opacity-100 mt-4 mb-4 pt-12" : "max-h-0 opacity-0"}`}>
+            <h2 className="text-center text-xl font-bold">Need a Front-End Developer for Your App, Startup, or Growing Team?</h2>
+            <p className="px-8 text-center text-lg">I help startups and businesses bring their ideas to life with modern, responsive, and user-friendly front-end solutions. Whether you’re building a new product, scaling an existing app, or looking for a front-end developer to join your team, I’m ready to jump in and collaborate.</p>
+            <p className="text-2xl leading-relaxed text-center font-libre-baskerville">Send me a message, and let’s discuss your needs, timeline, and vision.</p>
+            <div className="w-[15rem] mx-auto mt-8 mb-10">
+              <div className="relative group">
+                <a href="#contact" className={`bg-cta-primary2 text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
+                  <p className="tracking-wider font-bold">let's talk</p>
+                </a>
+                <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
+              </div>
+            </div>
+            <div className="p-8 rounded-lg bg-realWhite">
+              <h2 className="text-xl font-bold">What I Bring to the Table</h2>
+              <ul className="flex flex-col gap-4 mt-6 text-lg">
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Modern Front-End Development:</h3>
+                  </div>
+                  <p>Expertise in React, Node.js, and other modern frameworks for fast, scalable, and maintainable code.</p>
+                </li>
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Collaborative Mindset:</h3>
+                  </div>
+                  <p className="italic">Experience from teamwork. Ready to work seamlessly with your team, designers, or back-end developers.</p>
+                </li>
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Custom Solutions:</h3>
+                  </div>
+                  <p className="italic">Tailored front-end development for apps, SaaS platforms, and web applications.</p>
+                </li>
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Design-to-Code:</h3>
+                  </div>
+                  <p className="italic">I follow the project from design to code. I can take wireframes, prototypes, or designs (Figma, Adobe XD) and turn them into a functional product.</p>
+                </li>
+              </ul>
+            </div>
+            <div className="p-8 rounded-lg bg-realWhite mb-4">
+              <h2 className="text-xl font-bold">How We Can Work Together</h2>
+              <p>I offer flexible collaboration options:</p>
+              <ul className="flex flex-col gap-4 mt-6 text-lg">
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Project-Based Work:</h3>
+                  </div>
+                  <p className="italic">For specific app or product needs.</p>
+                </li>
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Part-Time or Long-Term Collaboration:</h3>
+                  </div>
+                  <p className="italic">Join your team as a dedicated front-end developer.</p>
+                </li>
+                <li>
+                  <div className="flex gap-2 items-center">
+                    <GoDotFill />
+                    <h3 className="font-bold">Startup Support:</h3>
+                  </div>
+                  <p className="italic"> From MVP development to scaling your product, I’ll help you at every stage.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -84,9 +169,6 @@ function ServiceAccordionBox({ service, isOpen, toggle }: { service: Service; is
           {service.totalPrice && <p className="font-nunito-sans mt-8 font-bold">Total price: {service.totalPrice}</p>}
         </div>
         <div className="flex justify-center mb-4">
-          {/* <a href="#packages" className="underline text-black hover:text-opacity-90 ">
-            check my packages
-          </a> */}
           <div className="relative group">
             <a href="#packages" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
               see my packages
