@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 const contactSchema = yup.object({
   name: yup.string().min(3, "Username must be at least 3 characters").required("Username is required"),
   email: yup.string().email("Please enter a valid email").required("Email is required"),
-  subject: yup.string().min(8, "Subject must be at least 3 characters").required("Subject is required"),
+  subject: yup.string().min(3, "Subject must be at least 3 characters").required("Subject is required"),
   message: yup.string().min(20, "Message must be at least 20 characters").required("Message is required"),
 });
 
@@ -65,7 +65,7 @@ export default function ContactForm() {
       </div>
 
       <div className="relative group self-center my-10">
-        <button type="submit" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
+        <button type="submit" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
           send inquiry
         </button>
         <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
