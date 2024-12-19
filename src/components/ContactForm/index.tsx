@@ -98,7 +98,7 @@ export default function ContactForm() {
         <label htmlFor="confirmPassword" className="label">
           Message
         </label>
-        <input type="textarea" id="message" placeholder="What do you need help with and/or how do you envision your project?" className="input" {...register("message")} />
+        <textarea id="message" placeholder="What do you need help with and/or how do you envision your project?" className="input textarea" {...register("message")} />
         {errors.message && <p className="error">{errors.message.message}</p>}
       </div>
 
