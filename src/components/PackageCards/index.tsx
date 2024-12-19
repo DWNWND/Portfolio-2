@@ -1,7 +1,5 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
-import { GiHealthNormal } from "react-icons/gi";
-import { CiMedicalCross } from "react-icons/ci";
 import { CgWebsite } from "react-icons/cg";
 import { LuCross } from "react-icons/lu";
 

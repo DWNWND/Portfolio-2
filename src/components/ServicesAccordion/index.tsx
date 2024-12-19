@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { servicesArr } from "../../assets/services/servicesArr.tsx";
-import { CgWebsite } from "react-icons/cg";
 import { CgIfDesign } from "react-icons/cg";
 import { FaRegCopyright } from "react-icons/fa6";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
-import { BsDot } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
 
 // import { packagesArr } from "../../assets/packages/packagesArr.tsx";
