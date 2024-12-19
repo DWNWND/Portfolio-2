@@ -46,16 +46,16 @@ export default function ServicesAccordion({ toggleAccordion, openAccordion }: Se
 }
 
 function ServiceAccordionBox({ service, isOpen, toggle }: { service: Service; isOpen: boolean; toggle: () => void }) {
-  const accordionBoxStyle = `${isOpen ? "bg-lazz2" : "bg-lazz"} font-nunito-sans text-black p-4 px-8 rounded-lg h-full border shadow-md`;
+  const accordionBoxStyle = `${isOpen ? "bg-lazz2" : "bg-lazz"} font-nunito-sans text-black py-6 px-8 rounded-lg h-full border shadow-md`;
 
   return (
     <div className={accordionBoxStyle}>
       <div className="flex items-center gap-2 justify-between cursor-pointer" onClick={toggle}>
-        <div className="flex items-center gap-4 text-2xl">
+        <div className="flex items-center gap-8 text-2xl">
           {service.name.toLowerCase().includes("development") && <CgIfDesign />}
           {service.name.toLowerCase().includes("design") && <FaRegCopyright />}
           {service.name.toLowerCase().includes("launch") && <HiOutlineRocketLaunch />}
-          <h2 className=" text-2xl p-1" id={JSON.stringify(service.id)}>
+          <h2 className="text-2xl" id={JSON.stringify(service.id)}>
             {service.name}
           </h2>
         </div>
@@ -66,27 +66,36 @@ function ServiceAccordionBox({ service, isOpen, toggle }: { service: Service; is
         </div>
       </div>
       <div className={` transition-max-height duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[1000px] opacity-100 mt-4 mb-4" : "max-h-0 opacity-0"}`}>
-        <div className="bg-realWhite rounded-lg text-lg p-10">
+        <p className="text-sm px-[3.5rem]">All mentioned prices are subject to 25% VAT</p>
+        <div className="rounded-lg text-lg px-[3.5rem] py-12">
           {service.cta && <p className="font-nunito-sans mb-8">{service.cta}</p>}
           <ul className="text-lg flex flex-col gap-4 font-nunito-sans">
             {service.includes.map((including) => {
               return (
-                <li className="flex justify-between" key={including.id}>
+                <li className="flex justify-between border-b pb-4" key={including.id}>
                   <div className="flex gap-4 items-center">
                     <GoDotFill />
                     <h3 className="font-bold">{including.name}</h3>
                     {including.info && <p className="italic">({including.info})</p>}
                   </div>
-                  {including.price && <div className="font-bold bg-realWhite text-black text-center rounded-lg">{including.price}</div>}
+                  {including.price && <div className="font-bold text-black text-center rounded-lg">{including.price}</div>}
                 </li>
               );
             })}
           </ul>
+
           {service.totalPrice && <p className="font-nunito-sans mt-8 font-bold">Total price: {service.totalPrice}</p>}
         </div>
-        <div className="flex justify-center mt-5">
-          <a href="#packages" className="underline text-cta-primary2 hover:text-black">check my packages</a>
-          {/* <button className="m-auto border bg-realWhite bg-opacity-100 hover:bg-opacity-80 font-nunito-sans rounded-full w-full text-xl text-black px-8 py-4 transition ease-in-out duration-300 shadow-md">check my packages</button> */}
+        <div className="flex justify-center mb-4">
+          {/* <a href="#packages" className="underline text-black hover:text-opacity-90 ">
+            check my packages
+          </a> */}
+          <div className="relative group">
+            <a href="#packages" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
+              see my packages
+            </a>
+            <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
+          </div>
         </div>
       </div>
     </div>

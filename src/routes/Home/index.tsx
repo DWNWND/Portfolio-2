@@ -10,6 +10,10 @@ import ContactForm from "../../components/ContactForm";
 import { packagesArr } from "../../assets/packages/packagesArr.tsx";
 import PackageCards from "../../components/PackageCards";
 import { GoDotFill } from "react-icons/go";
+import { BsLinkedin } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [filter, setFilter] = useState<string>("academic");
@@ -60,27 +64,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="min-h-[36rem] md:pt-[120px]">
+        <section id="services" className="min-h-[36rem] md:py-[120px] ">
           <div className="m-auto">
             <ServicesAccordion toggleAccordion={toggleAccordion} openAccordion={openAccordion} />
           </div>
         </section>
-        <section id="packages" className="min-h-[36rem]">
+        <section id="packages" className="min-h-[36rem] border-b">
           <div className="m-auto">
             <div className="border-b">
               <h2 className="text-center px-4 xl:max-w-screen-xl m-auto md:w-[64rem] max-w-[64rem] font-nunito-sans text-xl uppercase font-bold mb-6">my packages:</h2>
             </div>
             <div className="backgroundImage pt-40">
-              <div className="xl:max-w-screen-xl m-auto md:grid md:grid-cols-3 gap-10 pb-10">
+              <div className="xl:max-w-screen-xl m-auto md:grid md:grid-cols-3 gap-10">
                 {packagesArr.map((packages) => {
                   return <PackageCards packages={packages} key={packages.id} toggleAccordion={toggleAccordion} />;
                 })}
               </div>
               <div className="backgroundOpt2 text-black py-40">
-                <div className="bg-realWhite p-6 font-libre-baskerville">
-                  <h1 className="text-2xl md:text-4xl leading-relaxed text-center mb-8">Not sure where to start?</h1>{" "}
-                  <h1 className="text-2xl md:text-2xl leading-relaxed text-center">
-                    <a href="#contact" className="underline hover:text-black">
+                <div className="bg-realWhite border-y shadow-md p-12 ">
+                  <h1 className="text-2xl md:text-4xl leading-relaxed text-center mb-8  font-libre-baskerville font-bold">Not sure where to start?</h1>{" "}
+                  <h1 className="text-2xl md:text-2xl font-nunito-sans leading-relaxed text-center">
+                    <a href="#contact" className="underline text-cta-primary2 hover:text-black">
                       Contact me here
                     </a>
                     , and I’ll help you build the perfect package for your needs!
@@ -91,31 +95,45 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="bg-realWhite min-h-[40rem] border-y">
-          <div className="flex flex-col md:flex-row justify-between items-center p-6 md:p-16 gap-16">
-            <div className="">
+        <section id="about" className="bg-realWhite min-h-[40rem] xl:max-w-screen-xl m-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center py-6 md:py-32 gap-16">
+            <div className="relative mb-[65px]">
               <img className="object-cover rounded-full h-[16rem] min-w-[16rem] md:h-[30rem] md:min-w-[30rem] border" src={profileImage} alt="I’m Thea—a passionate front-end developer and web designer dedicated to crafting user-friendly websites and impactful digital experiences."></img>
+              <h2 className="font-meow-script-regular text-6xl xl:text-9xl absolute bottom-[-65px] backgroundOpt4  inset-x-0 text-center">I’m Thea</h2>
+            
             </div>
+
             <div>
-              <h2 className="font-meow-script-regular text-6xl xl:text-8xl mb-8">I’m Thea</h2>
-              <div className="font-nunito-sans text-lg leading-relaxed">
-                <p className="mb-4">I’ve always loved the challenge of turning ideas into something tangible, and making complex systems practical and easy to use.</p>
-                <p className="mb-4"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, I find joy in solving puzzles and making things look just right.</p>
-                <p> When I’m not coding or tweaking layouts, you’ll probably find me sketching new home improvement ideas, experimenting with new technology, or sipping coffee while daydreaming about my next big project.</p>
+              <div className="text-lg leading-relaxed">
+                <p className="mb-4 font-nunito-sans">I’ve always loved the challenge of turning ideas into something tangible, and making complex systems practical and easy to use.</p>
+                <p className="mb-4 font-nunito-sans">From a childhood building my own doll houses in my fathers workshop, to an adult that has refurbished an old apartment and an old sailboat. After two years working as a urban planner, I decided to follow my passion for design and technology. I started my journey by spending 2 years sailing the Mediterranean while also re-educating myself as a font end developer, with the goal of graduating as a straight A student.</p>
+                <p className="mb-4 font-nunito-sans"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, I find joy in solving puzzles and making things look just right.</p>
+                <p className="font-nunito-sans "> When I’m not coding or tweaking layouts, you’ll probably find me sketching new home improvement ideas, experimenting with new technology, or sipping coffee while daydreaming about my next big business idea.</p>
+              </div>
+              <div className="flex gap-8 text-4xl mt-2 mr-2 justify-end">
+                <Link to="https://www.linkedin.com/in/thea-oland-b38175139/">
+                  <BsLinkedin className="hover:scale-110 transition-all duration-300 ease-in-out" />
+                </Link>
+                <Link to="https://www.instagram.com/thea.oland/">
+                  <BsInstagram className="hover:scale-110 transition-all duration-300 ease-in-out" />
+                </Link>
+                <Link to="https://github.com/DWNWND">
+                  <FaGithub className="hover:scale-110 transition-all duration-300 ease-in-out" />
+                </Link>
               </div>
             </div>
           </div>
         </section>
-        <section className="border-b">
+        <section className="border-y bg-white">
           <div className="px-4 py-24 xl:max-w-screen-lg m-auto font-nunito-sans flex flex-col gap-8 ">
-            <h1 className="text-2xl md:text-4xl leading-relaxed text-center font-libre-baskerville">Front-End Development for Startups & Bigger Projects</h1>
+            <h1 className="text-2xl md:text-4xl leading-relaxed text-center font-libre-baskerville font-bold">Front-End Development for Startups & Bigger Projects</h1>
             <h2 className="text-center font-bold">Need a Front-End Developer for Your App, Startup, or Growing Team?</h2>
             <p className="px-8 text-center">I help startups and businesses bring their ideas to life with modern, responsive, and user-friendly front-end solutions. Whether you’re building a new product, scaling an existing app, or looking for a front-end developer to join your team, I’m ready to jump in and collaborate.</p>
             <p className="text-2xl leading-relaxed text-center font-libre-baskerville">Send me a message, and let’s discuss your needs, timeline, and vision.</p>
             <div className="w-[15rem] mx-auto mt-8 mb-10">
               <div className="relative group">
                 <a href="#contact" className={`bg-cta-primary2 text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
-                  <p>let's talk</p>
+                  <p className="tracking-wider font-bold">let's talk</p>
                 </a>
                 <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
               </div>
@@ -183,7 +201,7 @@ export default function Home() {
           </div>
         </section>
         <section id="contact" className="min-h-screen p-4 backgroundImage">
-          <div className="m-auto max-w-[60rem] ">
+          <div className="m-auto max-w-[48rem] ">
             <ContactForm />
           </div>
         </section>

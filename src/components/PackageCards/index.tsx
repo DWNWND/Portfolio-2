@@ -28,7 +28,7 @@ export default function PackagesCard({ packages, toggleAccordion }: PackagesCard
           {packages.id === 21 && <HiOutlineRocketLaunch className="text-cta-primary2 text-5xl" />}
           {packages.id === 20 && <LuCross className="text-cta-primary22 text-5xl" />}
           {packages.id === 22 && <CgWebsite className="text-cta-primary22 text-5xl" />}
-          <h2 className={`${packages.id === 21 ? "text-2xl md:text-4xl" : "text-xl md:text-3xl"} font-libre-baskerville  text-black text-center `}>{packages.name}</h2>
+          <h2 className={`${packages.id === 21 ? "text-2xl md:text-3xl " : "text-xl md:text-3xl"} font-bold font-libre-baskerville  text-black text-center `}>{packages.name}</h2>
         </div>
         <div className="flex flex-col gap-8">
           <h3 className={`${packages.id === 21 ? "text-cta-primary2" : "text-cta-primary22"} font-bold text-lg text-center`}>{packages.cta}</h3>
@@ -70,6 +70,7 @@ export default function PackagesCard({ packages, toggleAccordion }: PackagesCard
         </a>
         <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
       </div>
+      <p className="text-sm italic text-center">All mentioned prices are subject to 25% VAT</p>
     </div>
   );
 }
