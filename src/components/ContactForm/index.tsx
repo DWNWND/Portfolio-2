@@ -26,11 +26,28 @@ export default function ContactForm() {
   });
 
   const onSubmit = (data: RegisterFormInputs) => {
-    console.log(data);
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key as keyof RegisterFormInputs]);
+    });
+
+    const formObject: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value.toString();
+    });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formObject).toString(),
+    })
+      .then(() => alert("Form successfully submitted"))
+      .catch((error) => alert("Something went wrong: " + error));
   };
 
   return (
-    <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit(onSubmit)} className="backdropClass flex flex-col gap-6 w-full md:my-20 p-8 md:px-12 bg-white bg-opacity-95 border rounded-lg shadow-md">
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit(onSubmit)} className="backdropClass flex flex-col gap-6 w-full md:my-20 p-8 md:px-12 bg-white bg-opacity-95 border rounded-lg shadow-md">
+      <input type="hidden" name="form-name" value="contact" />
       <div className="m-auto md:my-6">
         <h2 className="font-libre-baskerville text-3xl md:text-4xl text-center">Get in touch!</h2>
         <p className="italic mt-8 text-center">Fill out this form, and I will get in touch with you as soon as possible.</p>
