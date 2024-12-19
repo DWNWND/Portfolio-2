@@ -27,15 +27,31 @@ export default function ContactForm() {
 
   const onSubmit = (data: RegisterFormInputs) => {
     const formData = new FormData();
+
+    // Add the form-name for Netlify
+    formData.append("form-name", "my-form");
+
+    // Append all other data
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key as keyof RegisterFormInputs]);
     });
 
+    // Honeypot check (if you have a honeypot field)
+    if (data["bot-field"]) {
+      console.log("Spam submission detected");
+      return;
+    }
+
+    // Convert FormData to URLSearchParams
     const formObject: Record<string, string> = {};
     formData.forEach((value, key) => {
       formObject[key] = value.toString();
     });
 
+    // Debug: log the encoded body
+    console.log(new URLSearchParams(formObject).toString());
+
+    // Submit the form
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -48,6 +64,7 @@ export default function ContactForm() {
   return (
     <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit(onSubmit)} className="backdropClass flex flex-col gap-6 w-full md:my-20 p-8 md:px-12 bg-white bg-opacity-95 border rounded-lg shadow-md">
       <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
       <div className="m-auto md:my-6">
         <h2 className="font-libre-baskerville text-3xl md:text-4xl text-center">Get in touch!</h2>
         <p className="italic mt-8 text-center">Fill out this form, and I will get in touch with you as soon as possible.</p>
