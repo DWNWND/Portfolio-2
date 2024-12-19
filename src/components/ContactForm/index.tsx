@@ -65,9 +65,9 @@ export default function ContactForm() {
       </div>
 
       <div className="relative group self-center my-10">
-        <a href="#" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
+        <button type="submit" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
           send inquiry
-        </a>
+        </button>
         <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
       </div>
     </form>
