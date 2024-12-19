@@ -8,8 +8,13 @@
   </head>
   <body>
     <div id="root">
-      <form name="contact" data-netlify="true" style="display: none">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" className="backdropClass flex flex-col gap-6 w-full md:my-20 p-8 md:px-12 bg-white bg-opacity-95 border rounded-lg shadow-md">
         <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
+        <input type="text" id="name" />
+        <input type="email" id="email" />
+        <input type="text" id="subject" />
+        <input type="textarea" id="message" />
       </form>
     </div>
     <script type="module" src="/src/main.tsx"></script>

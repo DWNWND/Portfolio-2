@@ -39,7 +39,7 @@ export default function ContactForm() {
         formData.append(key, value); // Safely append only defined values
       }
     });
-    
+
     // Honeypot check (if you have a honeypot field)
     if (data["bot-field"]) {
       console.log("Spam submission detected");
@@ -98,7 +98,7 @@ export default function ContactForm() {
         <label htmlFor="confirmPassword" className="label">
           Message
         </label>
-        <textarea id="message" placeholder="What do you need help with and/or how do you envision your project?" className="input" {...register("message")} />
+        <input type="textarea" id="message" placeholder="What do you need help with and/or how do you envision your project?" className="input" {...register("message")} />
         {errors.message && <p className="error">{errors.message.message}</p>}
       </div>
 
