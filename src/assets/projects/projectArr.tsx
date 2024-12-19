@@ -56,7 +56,7 @@ export const projectsArr = [
   {
     id: 2,
     title: "Bazaar",
-    description: "Live auction website. Built with Vanilla JS, SCSS, Bootstrap and Noroff API. Deployed with GitHub Pages. Including unit-tests with Jest and e2e-tests with Cypress running on workflows.",
+    description: "Live auction website. Built with Vanilla JS, SCSS, Bootstrap and Noroff API. Deployed with GitHub Pages. Including unit-tests and e2e-tests.",
     image: bazaarScreenshot,
     url: "https://dwnwnd.github.io/SemesterProject2_TheaOland/",
     repo: "https://github.com/DWNWND/SemesterProject2_TheaOland",

@@ -38,7 +38,7 @@ export default function PackagesCard({ packages, toggleAccordion }: PackagesCard
               <ul className="flex flex-col gap-2 p-2">
                 {packages.includes.map((including) => {
                   return (
-                    <li key="including.id">
+                    <li key={including.id}>
                       {including.linkedServiceId ? (
                         <a href={`#services`} onClick={() => toggleAccordion(including.linkedServiceId)} className="flex gap-2 items-center">
                           <p className={`${including.id <= 214 && including.id >= 211 ? "text-cta-primary2" : "text-cta-primary22"}`}>
@@ -63,7 +63,7 @@ export default function PackagesCard({ packages, toggleAccordion }: PackagesCard
         </div>
       </div>
       <div className="relative group">
-        <a href="#contact" className={`${packages.id === 21 ? "bg-cta-primary2" : "bg-cta-primary22"} text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
+        <a href="#contact" className={`${packages.id === 21 ? "bg-cta-primary2" : "bg-cta-primary22"} text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl tracking-wider font-bold text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
           <p>{packages.price}</p>
         </a>
         <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
