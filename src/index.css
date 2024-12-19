@@ -99,6 +99,19 @@ body {
   background: linear-gradient(transparent, #000000);
 }
 
+.backgroundOpt3 {
+  background: linear-gradient(transparent, #ffffff, transparent);
+}
+
+.backgroundOpt4 {
+  background-image: radial-gradient(ellipse farthest-side at center, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 0%, 0) 100%);
+}
+
+.backgroundOpt5 {
+  background-image: radial-gradient(ellipse farthest-side at center, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0) 100%);
+}
+
+
 .backgroundImage {
   background-image: linear-gradient(rgba(255, 255, 255, 0.21), rgba(255, 255, 255, 0.216)), url("./assets/images/robert-zunikoff-ebno_NwaOns-unsplash.jpg");
   background-repeat: no-repeat;
@@ -110,6 +123,15 @@ body {
 .backdropClass {
   backdrop-filter: blur(10px);
 }
+
+.backdropClass2 {
+  backdrop-filter: blur(3px);
+}
+
+/* .backdropClass2 {
+  backdrop-filter: blur(10px);
+  clip-path: circle(40%);
+} */
 
 @keyframes bounceArrow {
   0% {
