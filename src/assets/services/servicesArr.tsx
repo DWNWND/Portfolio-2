@@ -49,12 +49,12 @@
 //     id: 3,
 //     title: "ui/ux design",
 //     description: "I design intuitive and visually engaging interfaces that enhance user experience and drive engagement. My focus is on simplicity, usability, and creating user journeys that make sense.",
-//     cta: "Whether it's wireframes, prototypes, or fully fleshed out designs, I aim to bridge the gap between user needs and your business goals.",
+//     cta: "Whether it's wireframe, prototypes, or fully fleshed out designs, I aim to bridge the gap between user needs and your business goals.",
 //     products: [
 //       {
 //         id: 1,
 //         name: "basic",
-//         includes: "Wireframes and layouts for up to 3 pages with a focus on visual consistency",
+//         includes: "wireframe and layouts for up to 3 pages with a focus on visual consistency",
 //         price: "starting at $1,000",
 //       },
 //       {
