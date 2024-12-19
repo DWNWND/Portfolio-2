@@ -58,7 +58,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`transition-all bg-realWhite z-[100] w-full ${isVisible ? "translate-y-0" : "-translate-y-full"} transition-max-height hover:shadow-md duration-300 ease-in-out fixed top-0 p-4 border-b border-black`}>
+      <nav className={`transition-all bg-white z-[100] w-full ${isVisible ? "translate-y-0" : "-translate-y-full"} transition-max-height hover:shadow-md duration-300 ease-in-out fixed top-0 p-4 border-b border-black`}>
         <ul className="flex justify-around items-center">
           <li className={`${linkStyle} ${activeSection === "home" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
             <a href="#home" className="relative">

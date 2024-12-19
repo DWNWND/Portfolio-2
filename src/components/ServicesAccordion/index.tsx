@@ -22,7 +22,7 @@ interface ServicesAccordionProps {
 
 export default function ServicesAccordion({ toggleAccordion, openAccordion }: ServicesAccordionProps): JSX.Element {
   const isOpen = openAccordion === 40;
-  const accordionBoxStyle = `${isOpen ? "bg-background" : "bg-white"} font-nunito-sans text-black py-6 px-8 rounded-lg h-full border shadow-md`;
+  const accordionBoxStyle = `${isOpen ? "bg-background" : "bg-beige"} font-nunito-sans text-black py-6 px-8 rounded-lg h-full border shadow-md`;
 
   return (
     <div className="px-4 md:px-0">
@@ -54,13 +54,13 @@ export default function ServicesAccordion({ toggleAccordion, openAccordion }: Se
             <p className="text-2xl leading-relaxed text-center font-libre-baskerville">Send me a message, and let’s discuss your needs, timeline, and vision.</p>
             <div className="w-[15rem] mx-auto mt-8 mb-10">
               <div className="relative group">
-                <a href="#contact" className={`bg-cta-primary2 text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
+                <a href="#contact" className={`bg-cta-primaryBright text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
                   <p className="tracking-wider font-bold">let's talk</p>
                 </a>
                 <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
               </div>
             </div>
-            <div className="p-8 rounded-lg bg-realWhite">
+            <div className="p-8 rounded-lg bg-white">
               <h2 className="text-xl font-bold">What I Bring to the Table</h2>
               <ul className="flex flex-col gap-4 mt-6 text-lg">
                 <li>
@@ -93,7 +93,7 @@ export default function ServicesAccordion({ toggleAccordion, openAccordion }: Se
                 </li>
               </ul>
             </div>
-            <div className="p-8 rounded-lg bg-realWhite mb-4">
+            <div className="p-8 rounded-lg bg-white mb-4">
               <h2 className="text-xl font-bold">How We Can Work Together</h2>
               <p>I offer flexible collaboration options:</p>
               <ul className="flex flex-col gap-4 mt-6 text-lg">
@@ -128,7 +128,7 @@ export default function ServicesAccordion({ toggleAccordion, openAccordion }: Se
 }
 
 function ServiceAccordionBox({ service, isOpen, toggle }: { service: Service; isOpen: boolean; toggle: () => void }) {
-  const accordionBoxStyle = `${isOpen ? "bg-lazz2" : "bg-lazz"} font-nunito-sans text-black py-6 px-8 rounded-lg h-full border shadow-md`;
+  const accordionBoxStyle = `${isOpen ? "bg-lightVibrantPurple" : "bg-lightPurple"} font-nunito-sans text-black py-6 px-8 rounded-lg h-full border shadow-md`;
 
   return (
     <div className={accordionBoxStyle}>
@@ -170,7 +170,7 @@ function ServiceAccordionBox({ service, isOpen, toggle }: { service: Service; is
         </div>
         <div className="flex justify-center mb-4">
           <div className="relative group">
-            <a href="#packages" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
+            <a href="#packages" className="tracking-wider block font-bold text-center hover:scale-105 bg-white border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
               see my packages
             </a>
             <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>

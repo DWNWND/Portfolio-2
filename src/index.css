@@ -20,7 +20,6 @@ body {
 
 .input {
   padding: 0.5rem 0.7rem;
-  /* margin: 0.5rem; */
   font-size: 1rem;
   border: 1px solid black;
   font-weight: 400;
@@ -40,22 +39,6 @@ body {
   font-style: normal;
 }
 
-.font-domine {
-  font-family: "Domine", serif;
-  font-optical-sizing: auto;
-}
-
-.font-quicksand {
-  font-family: "Quicksand", serif;
-  font-optical-sizing: auto;
-}
-
-.font-bokor-regular {
-  font-family: "Bokor", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .font-nunito-sans {
   font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
@@ -63,54 +46,18 @@ body {
   font-variation-settings: "wdth" 100, "YTLC" 500;
 }
 
-.font-poppins {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-}
-
-.font-crimson-text {
-  font-family: "Crimson Text", serif;
-  font-style: normal;
-}
-
 .font-libre-baskerville {
   font-family: "Libre Baskerville", serif;
   font-style: normal;
 }
 
-.font-eb-garamond {
-  font-family: "EB Garamond", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.font-playfair-display {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.font-merriweather-light {
-  font-family: "Merriweather", serif;
-  font-style: normal;
-}
-
-.backgroundOpt2 {
+.linearBlackBackground {
   background: linear-gradient(transparent, #000000);
 }
 
-.backgroundOpt3 {
-  background: linear-gradient(transparent, #ffffff, transparent);
-}
-
-.backgroundOpt4 {
+.linearWhiteBackground {
   background-image: radial-gradient(ellipse farthest-side at center, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 0%, 0) 100%);
 }
-
-.backgroundOpt5 {
-  background-image: radial-gradient(ellipse farthest-side at center, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0) 100%);
-}
-
 
 .backgroundImage {
   background-image: linear-gradient(rgba(255, 255, 255, 0.21), rgba(255, 255, 255, 0.216)), url("./assets/images/robert-zunikoff-ebno_NwaOns-unsplash.jpg");
@@ -123,15 +70,6 @@ body {
 .backdropClass {
   backdrop-filter: blur(10px);
 }
-
-.backdropClass2 {
-  backdrop-filter: blur(3px);
-}
-
-/* .backdropClass2 {
-  backdrop-filter: blur(10px);
-  clip-path: circle(40%);
-} */
 
 @keyframes bounceArrow {
   0% {
@@ -148,72 +86,3 @@ body {
 .group-hover:animate-bouncearrow {
   animation: bounceArrow 0.5s ease-in-out infinite;
 }
-
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
