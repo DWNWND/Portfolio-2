@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Nav from "./Nav";
 import Footer from "./Footer";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "../ErrorFallback";
@@ -8,7 +8,7 @@ export default function Layout(): JSX.Element {
   return (
     <div>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Header />
+        <Nav />
         <main>
           <Outlet />
         </main>
