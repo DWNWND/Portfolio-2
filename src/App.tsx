@@ -4,6 +4,13 @@ import RouteNotFound from "./routes/RouteNotFound";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Hotjar from "@hotjar/browser";
+
+const siteId = 3663593;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
+
 const router = createBrowserRouter([
   {
     path: "/",

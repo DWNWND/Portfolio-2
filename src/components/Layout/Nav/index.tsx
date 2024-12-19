@@ -32,13 +32,13 @@ export default function Nav() {
       const sections = document.querySelectorAll("section");
       let currentSection = activeSection;
 
-      for (let section of sections) {
+      for (const section of sections) {
         const sectionTop = section.getBoundingClientRect().top;
         const sectionHeight = section.offsetHeight;
 
         if (sectionTop <= 50 && sectionTop + sectionHeight > 300) {
           currentSection = section.getAttribute("id") || "";
-          break; 
+          break;
         }
       }
       if (currentSection !== activeSection) {
@@ -54,52 +54,50 @@ export default function Nav() {
     };
   }, [activeSection]);
 
-  const linkStyle = "text-black transform font-nunito-sans transition duration-300 ease-in-out text-lg";
+  const linkStyle = "text-black transform font-nunito-sans transition duration-300 ease-in-out text-sm md:text-lg";
 
   return (
-    <>
-      <nav className={`transition-all bg-realWhite z-[100] w-full ${isVisible ? "translate-y-0" : "-translate-y-full"} transition-max-height hover:shadow-md duration-300 ease-in-out fixed top-0 p-4 border-b border-black`}>
-        <ul className="flex justify-around items-center">
-          <li className={`${linkStyle} ${activeSection === "home" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#home" className="relative">
-              <span>home</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "home" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-          <li className={`${linkStyle} ${activeSection === "services" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#services" className="relative">
-              <span>services</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "services" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-          <li className={`${linkStyle} ${activeSection === "packages" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#packages" className="relative">
-              <span>packages</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "packages" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-          {!isMobile && <h1 className="font-meow-script-regular xl:text-6xl">devThea</h1>}
+    <nav className={`transition-all bg-white z-[100] w-full ${!isMobile && (isVisible ? "translate-y-0" : "-translate-y-full")} transition-max-height hover:shadow-md duration-300 ease-in-out fixed top-0 p-4 border-b border-black`}>
+      <ul className="flex justify-around items-center">
+        <li className={`${linkStyle} ${activeSection === "home" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+          <a href="#home" className="relative">
+            <span>home</span>
+            <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "home" ? "w-full" : "group-hover:w-full"}`}></span>
+          </a>
+        </li>
+        <li className={`${linkStyle} ${activeSection === "services" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+          <a href="#services" className="relative">
+            <span>services</span>
+            <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "services" ? "w-full" : "group-hover:w-full"}`}></span>
+          </a>
+        </li>
+        <li className={`${linkStyle} ${activeSection === "packages" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+          <a href="#packages" className="relative">
+            <span>packages</span>
+            <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "packages" ? "w-full" : "group-hover:w-full"}`}></span>
+          </a>
+        </li>
+        {!isMobile && <h1 className="font-meow-script-regular xl:text-6xl">devThea</h1>}
 
-          <li className={`${linkStyle} ${activeSection === "about" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#about" className="relative">
-              <span>about</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "about" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-          <li className={`${linkStyle} ${activeSection === "contact" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#contact" className="relative">
-              <span>contact</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "contact" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-          <li className={`${linkStyle} ${activeSection === "portfolio" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
-            <a href="#portfolio" className="relative">
-              <span>portfolio</span>
-              <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "portfolio" ? "w-full" : "group-hover:w-full"}`}></span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </>
+        <li className={`${linkStyle} ${activeSection === "about" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+          <a href="#about" className="relative">
+            <span>about</span>
+            <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "about" ? "w-full" : "group-hover:w-full"}`}></span>
+          </a>
+        </li>
+        <li className={`${linkStyle} ${activeSection === "contact" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+          <a href="#contact" className="relative">
+            <span>contact</span>
+            <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "contact" ? "w-full" : "group-hover:w-full"}`}></span>
+          </a>
+        </li>
+        <li className={`${linkStyle} ${activeSection === "portfolio" ? "scale-105 font-bold" : "hover:scale-105"} group`}>
+          <a href="#portfolio" className="relative">
+            <span>portfolio</span>
+            <span className={`absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 ${activeSection === "portfolio" ? "w-full" : "group-hover:w-full"}`}></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 }
