@@ -32,7 +32,7 @@ export default function Nav() {
       const sections = document.querySelectorAll("section");
       let currentSection = activeSection;
 
-      for (let section of sections) {
+      for (const section of sections) {
         const sectionTop = section.getBoundingClientRect().top;
         const sectionHeight = section.offsetHeight;
 
