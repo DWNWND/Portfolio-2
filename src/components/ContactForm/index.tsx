@@ -30,7 +30,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="backdropClass flex flex-col gap-6 w-full my-20 p-4 md:p-8 md:px-12 bg-realWhite bg-opacity-95 border rounded-lg shadow-md">
+    <form name="contact" netlify onSubmit={handleSubmit(onSubmit)} className="backdropClass flex flex-col gap-6 w-full my-20 p-4 md:p-8 md:px-12 bg-realWhite bg-opacity-95 border rounded-lg shadow-md">
       <div className="m-auto my-6">
         <h2 className="font-libre-baskerville text-3xl md:text-4xl text-center">Get in touch!</h2>
         <p className="italic mt-8">Fill out this form, and I will get in touch with you as soon as possible.</p>
