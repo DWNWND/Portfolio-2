@@ -9,7 +9,6 @@ import { ImageModal } from "../../components/ImageModal";
 import ContactForm from "../../components/ContactForm";
 import { packagesArr } from "../../assets/packages/packagesArr.tsx";
 import PackageCards from "../../components/PackageCards";
-import { GoDotFill } from "react-icons/go";
 import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
@@ -84,8 +83,9 @@ export default function Home() {
                 <div className="bg-realWhite border-y shadow-md p-12 ">
                   <h1 className="text-2xl md:text-4xl leading-relaxed text-center mb-8  font-libre-baskerville font-bold">Not sure where to start?</h1>{" "}
                   <h1 className="text-2xl md:text-2xl font-nunito-sans leading-relaxed text-center">
-                    <a href="#contact" className="underline text-cta-primary2 hover:text-black">
-                      Contact me here
+                    <a href="#contact" className="relative inline gap-2 font-nunito-sans text-blue-500 text-center group">
+                      <span className="text-cta-primary2 hover:text-black">Contact me</span>
+                      <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     , and I’ll help you build the perfect package for your needs!
                   </h1>
@@ -100,15 +100,14 @@ export default function Home() {
             <div className="relative mb-[65px]">
               <img className="object-cover rounded-full h-[16rem] min-w-[16rem] md:h-[30rem] md:min-w-[30rem] border" src={profileImage} alt="I’m Thea—a passionate front-end developer and web designer dedicated to crafting user-friendly websites and impactful digital experiences."></img>
               <h2 className="font-meow-script-regular text-6xl xl:text-9xl absolute bottom-[-65px] backgroundOpt4  inset-x-0 text-center">I’m Thea</h2>
-            
             </div>
 
             <div>
               <div className="text-lg leading-relaxed">
-                <p className="mb-4 font-nunito-sans">I’ve always loved the challenge of turning ideas into something tangible, and making complex systems practical and easy to use.</p>
-                <p className="mb-4 font-nunito-sans">From a childhood building my own doll houses in my fathers workshop, to an adult that has refurbished an old apartment and an old sailboat. After two years working as a urban planner, I decided to follow my passion for design and technology. I started my journey by spending 2 years sailing the Mediterranean while also re-educating myself as a font end developer, with the goal of graduating as a straight A student.</p>
+                <p className="mb-4 font-nunito-sans">I’ve always loved turning ideas into something real while combining design and practicality.</p>
+                <p className="mb-4 font-nunito-sans">From building dollhouses in my father’s workshop as a child to solving complex challenges as an adult, my passion for design and problem-solving has been a constant. Two years ago I decided to the pursue my love for design and technology. While sailing on a boat in the Mediterranean with my husband I re-educated myself as a front-end developer, graduating with top grades.</p>
                 <p className="mb-4 font-nunito-sans"> As a front-end developer and web designer, I spend my days crafting websites and applications that are not only functional but also enjoyable to use. My work is all about creating a balance between brand designs and smooth functionality, I find joy in solving puzzles and making things look just right.</p>
-                <p className="font-nunito-sans "> When I’m not coding or tweaking layouts, you’ll probably find me sketching new home improvement ideas, experimenting with new technology, or sipping coffee while daydreaming about my next big business idea.</p>
+                <p className="font-nunito-sans "> When I’m not coding or tweaking layouts, you’ll probably find me sketching new home improvement ideas, experimenting with new tech, or sipping coffee while dreaming up my next big idea.</p>
               </div>
               <div className="flex gap-8 text-4xl mt-2 mr-2 justify-end">
                 <Link to="https://www.linkedin.com/in/thea-oland-b38175139/">
@@ -124,100 +123,26 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="border-y bg-white">
-          <div className="px-4 py-24 xl:max-w-screen-lg m-auto font-nunito-sans flex flex-col gap-8 ">
-            <h1 className="text-2xl md:text-4xl leading-relaxed text-center font-libre-baskerville font-bold">Front-End Development for Startups & Bigger Projects</h1>
-            <h2 className="text-center font-bold">Need a Front-End Developer for Your App, Startup, or Growing Team?</h2>
-            <p className="px-8 text-center">I help startups and businesses bring their ideas to life with modern, responsive, and user-friendly front-end solutions. Whether you’re building a new product, scaling an existing app, or looking for a front-end developer to join your team, I’m ready to jump in and collaborate.</p>
-            <p className="text-2xl leading-relaxed text-center font-libre-baskerville">Send me a message, and let’s discuss your needs, timeline, and vision.</p>
-            <div className="w-[15rem] mx-auto mt-8 mb-10">
-              <div className="relative group">
-                <a href="#contact" className={`bg-cta-primary2 text-center block hover:scale-105  bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-xl text-white px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600`}>
-                  <p className="tracking-wider font-bold">let's talk</p>
-                </a>
-                <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
-              </div>
-            </div>
-            <div className="p-8 rounded-lg bg-lazz">
-              <h2 className="text-xl font-bold">What I Bring to the Table</h2>
-              <ul className="flex flex-col gap-4 mt-6">
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Modern Front-End Development:</h3>
-                  </div>
-                  <p>Expertise in React, Node.js, and other modern frameworks for fast, scalable, and maintainable code.</p>
-                </li>
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Collaborative Mindset:</h3>
-                  </div>
-                  <p className="italic">Experience from teamwork. Ready to work seamlessly with your team, designers, or back-end developers.</p>
-                </li>
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Custom Solutions:</h3>
-                  </div>
-                  <p className="italic">Tailored front-end development for apps, SaaS platforms, and web applications.</p>
-                </li>
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Design-to-Code:</h3>
-                  </div>
-                  <p className="italic">I follow the project from design to code. I can take wireframes, prototypes, or designs (Figma, Adobe XD) and turn them into a functional product.</p>
-                </li>
-              </ul>
-            </div>
-            <div className="p-8 rounded-lg bg-lazz2">
-              <h2 className="text-xl font-bold">How We Can Work Together</h2>
-              <p>I offer flexible collaboration options:</p>
-              <ul className="flex flex-col gap-4 mt-6">
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Project-Based Work:</h3>
-                  </div>
-                  <p className="italic">For specific app or product needs.</p>
-                </li>
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Part-Time or Long-Term Collaboration:</h3>
-                  </div>
-                  <p className="italic">Join your team as a dedicated front-end developer.</p>
-                </li>
-                <li>
-                  <div className="flex gap-2 items-center">
-                    <GoDotFill />
-                    <h3 className="font-bold">Startup Support:</h3>
-                  </div>
-                  <p className="italic"> From MVP development to scaling your product, I’ll help you at every stage.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section id="contact" className="min-h-screen p-4 backgroundImage">
-          <div className="m-auto max-w-[48rem] ">
+
+        <section id="contact" className="min-h-screen border-t backgroundImage">
+          <div className="m-auto max-w-[48rem] p-4">
             <ContactForm />
           </div>
         </section>
-        <section id="projects" className=" min-h-[36rem] border-y">
+        <section id="portfolio" className=" min-h-[36rem] border-t">
+          <h2 className="text-center px-4 m-auto w-full font-nunito-sans text-xl uppercase font-bold pb-6 sr-only">portfolio:</h2>
+
           <div className="m-auto">
-            <h2 className="font-nunito-sans text-4xl text-realWhite uppercase text-center border-b border-black p-4 bg-cta-primary2">my projects</h2>
             <div className="flex w-full border-b">
-              <button onClick={() => setFilter("academic")} className={`${buttonClass} ${filter === "academic" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-lazz"}`}>
+              <button onClick={() => setFilter("academic")} className={`${buttonClass} ${filter === "academic" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-black hover:text-realWhite"} pl-16`}>
                 academic projects
               </button>
               <div className="w-[4px] bg-black"></div>
-              <button onClick={() => setFilter("professional")} className={`${buttonClass} ${filter === "professional" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-lazz"}`}>
+              <button onClick={() => setFilter("professional")} className={`${buttonClass} ${filter === "professional" ? "bg-opacity-100 text-realWhite " : "bg-opacity-0 hover:bg-black hover:text-realWhite"}`}>
                 professional projects
               </button>
               <div className="w-[4px] bg-black"></div>
-              <button onClick={() => setFilter("personal")} className={`${buttonClass} ${filter === "personal" ? "bg-opacity-100 text-realWhite" : "bg-opacity-0 hover:bg-lazz"}`}>
+              <button onClick={() => setFilter("personal")} className={`${buttonClass} ${filter === "personal" ? "bg-opacity-100 text-realWhite" : "bg-opacity-0 hover:bg-black hover:text-realWhite"} pr-16`}>
                 personal projects
               </button>
             </div>
