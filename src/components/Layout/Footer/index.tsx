@@ -1,5 +1,4 @@
-import { BsLinkedin } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
+import { BsLinkedin, BsInstagram } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

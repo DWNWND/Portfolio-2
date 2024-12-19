@@ -2,8 +2,8 @@ import { RiTailwindCssFill, RiReactjsLine, RiJavascriptFill, RiBootstrapFill, Ri
 import { FaSass, FaCss3Alt } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import { GoArrowRight } from "react-icons/go";
-import { Link } from "react-router-dom";
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 interface Project {
   title: string;

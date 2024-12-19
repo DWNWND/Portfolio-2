@@ -1,18 +1,13 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Header from "../../components/Header";
-import { projectsArr } from "../../assets/projects/projectArr";
-import profileImage from "../../assets/images/IMG_6589.jpg";
-import ProjectCard from "../../components/ProjectCard";
-import ServicesAccordion from "../../components/ServicesAccordion";
-import { useState } from "react";
-import { ImageModal } from "../../components/ImageModal";
-import ContactForm from "../../components/ContactForm";
-import { packagesArr } from "../../assets/packages/packagesArr.tsx";
-import PackageCards from "../../components/PackageCards";
-import { BsLinkedin } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { projectsArr } from "../../assets/projects/projectArr";
+import { packagesArr } from "../../assets/packages/packagesArr";
+import profileImage from "../../assets/images/IMG_6589.jpg";
+import { ProjectCard, ServicesAccordion, ImageModal, ContactForm, PackageCards } from "../../components";
+import { BsLinkedin, BsInstagram } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { useScreenSizeCheckHook } from "../../hooks/useScreenSizeCheckHook";
 
 export default function Home() {
   const [filter, setFilter] = useState<string>("academic");
@@ -20,6 +15,7 @@ export default function Home() {
   const [currentImage, setCurrentImage] = useState<string>("");
   const [currentAlt, setCurrentAlt] = useState<string>("");
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+  const isMobile = useScreenSizeCheckHook();
 
   const toggleAccordion = (id: number) => {
     setOpenAccordion(openAccordion === id ? null : id);
@@ -50,7 +46,20 @@ export default function Home() {
       <div className="bg-realWhite relative">
         {imageModalOpen && <ImageModal image={currentImage} alt={currentAlt} toggle={closeModal} />}
         <section id="home">
-          <Header />
+          <header className="relative w-full h-screen backgroundImage border-b">
+            <div className="absolute inset-0 flex flex-col justify-center items-center">
+              {isMobile && <h1 className="font-meow-script-regular text-center text-6xl mb-10 ">I'm Thea</h1>}
+              <div className="text-center flex flex-col justify-center items-center gap-5 md:mb-10 backgroundOpt4 p-20">
+                <h2 className=" font-libre-baskerville text-4xl ">I make professional websites and web-applications for a living</h2>
+              </div>
+              <div className="relative group">
+                <a href="#packages" className="tracking-wider block font-bold text-center hover:scale-105 bg-realWhite border border-black bg-opacity-100 z-[20] relative font-nunito-sans rounded-full text-2xl text-black hover:text-opacity-90 px-12 py-5 transition-all ease-in-out duration-300 group-hover:shadow-lg group-hover:bg-gradient-to-r from-blue-500 to-purple-600">
+                  check pricing packages
+                </a>
+                <div className="rounded-full w-full h-full top-2 left-2 absolute bg-black z-[10] transition-all duration-300 ease-in-out group-hover:top-0 group-hover:left-0 group-hover:opacity-50"></div>
+              </div>
+            </div>
+          </header>
           <div className="px-4 pt-60 pb-32 xl:max-w-screen-xl m-auto">
             <h1 className="font-libre-baskerville text-2xl md:text-6xl leading-relaxed text-center">
               I turn <em>complex functionality</em> into

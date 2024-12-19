@@ -6,7 +6,7 @@ interface ImageModalProps {
   toggle: () => void;
 }
 
-export function ImageModal({ image, alt, toggle }: ImageModalProps): JSX.Element {
+export default function ImageModal({ image, alt, toggle }: ImageModalProps): JSX.Element {
   return (
     <div className="fixed inset-0 z-[105] flex items-center justify-center">
       <div className="absolute inset-0 bg-black bg-opacity-75 transition-opacity" onClick={toggle} aria-hidden="true"></div>
