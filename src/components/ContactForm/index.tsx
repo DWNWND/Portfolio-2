@@ -14,6 +14,7 @@ interface RegisterFormInputs {
   email: string;
   subject: string;
   message: string;
+  "bot-field"?: string;
 }
 
 export default function ContactForm() {
@@ -29,13 +30,16 @@ export default function ContactForm() {
     const formData = new FormData();
 
     // Add the form-name for Netlify
-    formData.append("form-name", "my-form");
+    formData.append("form-name", "contact");
 
-    // Append all other data
+    // Append the rest of the form data, checking for undefined values
     Object.keys(data).forEach((key) => {
-      formData.append(key, data[key as keyof RegisterFormInputs]);
+      const value = data[key as keyof RegisterFormInputs];
+      if (value !== undefined) {
+        formData.append(key, value); // Safely append only defined values
+      }
     });
-
+    
     // Honeypot check (if you have a honeypot field)
     if (data["bot-field"]) {
       console.log("Spam submission detected");
